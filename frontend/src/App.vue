@@ -34,9 +34,7 @@
       <!-- 底部資訊 -->
       <el-footer class="app-footer">
         <div class="footer-content">
-          <p>&copy; 2025 金融商品喜好紀錄系統. All rights reserved.</p>
-          <p>作者: 翁瑋志</p>
-          <p>技術架構: Vue.js + Spring Boot + MySQL</p>
+          <p>&copy; 2025 金融商品喜好紀錄系統. All rights reserved. 作者: 翁瑋志</p>
         </div>
       </el-footer>
     </el-container>
