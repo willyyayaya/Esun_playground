@@ -10,20 +10,20 @@
     "serve": "vite preview --port 5173"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.5.0",
     "element-plus": "^2.3.8",
-    "@element-plus/icons-vue": "^2.1.0",
-    "pinia": "^2.1.6"
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.3.4",
-    "vite": "^4.4.9",
-    "sass": "^1.66.1"
+    "@vitejs/plugin-vue": "^5.2.4",
+    "sass": "^1.66.1",
+    "vite": "^6.3.5"
   },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
   }
-} 
+}
