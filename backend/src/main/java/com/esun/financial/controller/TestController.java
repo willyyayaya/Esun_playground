@@ -21,7 +21,7 @@ import java.util.Map;
  * 測試控制器
  * 用於測試系統功能，不依賴資料庫
  * 
- * @author 開發團隊
+ * @author Willy Weng
  * @version 1.0.0
  */
 @RestController

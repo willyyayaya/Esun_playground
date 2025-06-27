@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * 喜好清單控制器
  * 提供金融商品喜好清單的RESTful API
  * 
- * @author 開發團隊
+ * @author Willy Weng
  * @version 1.0.0
  */
 @RestController

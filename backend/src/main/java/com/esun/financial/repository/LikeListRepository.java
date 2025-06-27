@@ -13,7 +13,7 @@ import java.util.Optional;
  * 喜好清單資料存取介面
  * 使用 JPA 和原生查詢實現資料存取，防止 SQL Injection
  * 
- * @author 開發團隊
+ * @author Willy Weng
  * @version 1.0.0
  */
 @Repository

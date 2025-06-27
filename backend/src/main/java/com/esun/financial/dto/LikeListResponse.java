@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 喜好清單回應 DTO
  * 
- * @author 開發團隊
+ * @author Willy Weng
  * @version 1.0.0
  */
 @Data

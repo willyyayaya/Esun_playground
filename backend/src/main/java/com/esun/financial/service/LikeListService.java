@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * 喜好清單服務類別
  * 
- * @author 開發團隊
+ * @author Willy Weng
  * @version 1.0.0
  */
 @Service
