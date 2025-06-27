@@ -1,0 +1,152 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: financial-preference-system
+  profiles:
+    active: default
+  
+  # 資料庫配置 - 暫時註解掉以便測試
+  # datasource:
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  #   url: jdbc:mysql://localhost:3306/financial_preference?useSSL=false&serverTimezone=Asia/Taipei&allowPublicKeyRetrieval=true&characterEncoding=utf8
+  #   username: root
+  #   password: password
+  #   hikari:
+  #     pool-name: FinancialHikariCP
+  #     maximum-pool-size: 20
+  #     minimum-idle: 5
+  #     connection-timeout: 30000
+  #     idle-timeout: 600000
+  #     max-lifetime: 1800000
+  #     leak-detection-threshold: 60000
+
+  # JPA 配置 - 暫時註解掉
+  # jpa:
+  #   hibernate:
+  #     ddl-auto: validate
+  #     naming:
+  #       physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  #   show-sql: true
+  #   properties:
+  #     hibernate:
+  #       dialect: org.hibernate.dialect.MySQL8Dialect
+  #       format_sql: true
+  #       use_sql_comments: true
+  #       jdbc:
+  #         batch_size: 20
+  #       order_inserts: true
+  #       order_updates: true
+
+  # H2 資料庫配置 (測試用)
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:financial_preference;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    hikari:
+      pool-name: FinancialHikariCP
+      maximum-pool-size: 20
+      minimum-idle: 5
+  
+  # SQL 初始化配置
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      continue-on-error: false
+
+  # JPA 配置 (H2)
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        use_sql_comments: true
+
+  # H2 Console (開發用)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# 自定義配置
+app:
+  security:
+    cors:
+      allowed-origins: 
+        - http://localhost:3000
+        - http://localhost:5173
+        - http://localhost:5175
+      allowed-methods: 
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+      allowed-headers: "*"
+      allow-credentials: true
+    
+  # XSS 防護配置
+  xss:
+    enabled: true
+    allowed-tags: 
+      - b
+      - i
+      - u
+      - em
+      - strong
+    
+  # SQL 注入防護
+  sql-injection:
+    enabled: true
+    patterns:
+      - "(?i).*((union(.*?)select)|(%27)|(')|(--)|(#)|(%3D)|(;)).*"
+      - "(?i).*(exec|execute|drop|create|alter|insert|update|delete|select|union|script)\\s*\\(.*"
+
+# 日誌配置
+logging:
+  level:
+    com.esun.financial: DEBUG
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+# API Documentation
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+  info:
+    title: 金融商品喜好紀錄系統 API
+    description: 用於管理用戶金融商品喜好的 RESTful API
+    version: 1.0.0
+    contact:
+      name: 開發團隊
+      email: dev@esun.com 
