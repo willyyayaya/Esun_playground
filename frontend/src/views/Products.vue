@@ -331,14 +331,12 @@ const submitAddForm = async () => {
     
     const requestData = {
       userId: addForm.userId,
-      productName: addForm.productName,
-      productPrice: addForm.productPrice,
-      feeRate: addForm.feeRate,
-      accountNumber: addForm.accountNumber,
-      quantity: addForm.quantity
+      productNo: selectedProduct.value.productId,
+      account: addForm.accountNumber,
+      orderQuantity: addForm.quantity
     }
     
-    await axios.post('/api/like-list', requestData)
+    await axios.post('/api/likelist', requestData)
     ElMessage.success('成功加入喜好清單')
     addDialogVisible.value = false
     detailDialogVisible.value = false
