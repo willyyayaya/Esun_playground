@@ -161,7 +161,3 @@ npm run dev
 - **開發語言**: Java 11+, JavaScript ES6+
 - **開發環境**: IntelliJ IDEA, VS Code
 - **版本控制**: Git
-
-## 授權
-
-本專案僅供學習和展示使用。 
