@@ -147,11 +147,12 @@ npm run dev
 ```bash
 # 後端建置
 cd backend
-mvn clean package -DskipTests
+mvn spring-boot:run
 
 # 前端建置
 cd frontend
-npm run build
+npm install
+npm run dev
 ```
 
 ## 開發團隊
