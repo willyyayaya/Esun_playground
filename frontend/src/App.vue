@@ -10,7 +10,8 @@
           </div>
           <div class="user-info">
             <el-dropdown>
-              <span class="user-name">
+              <span class="user-name" style="width: 200px; background-color: #f0f9eb; color: #409EFF;"
+              >
                 <el-icon><User /></el-icon>
                 {{ currentUser }}
                 <el-icon><ArrowDown /></el-icon>
