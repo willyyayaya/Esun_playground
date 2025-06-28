@@ -45,7 +45,7 @@ spring:
   #       order_inserts: true
   #       order_updates: true
 
-  # H2 資料庫配置 (測試用)
+  # H2 資料庫配置
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:financial_preference;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -77,7 +77,7 @@ spring:
         format_sql: true
         use_sql_comments: true
 
-  # H2 Console (開發用)
+  # H2 Console
   h2:
     console:
       enabled: true
@@ -148,5 +148,5 @@ springdoc:
     description: 用於管理用戶金融商品喜好的 RESTful API
     version: 1.0.0
     contact:
-      name: 開發團隊
-      email: dev@esun.com 
+      name: Willy Weng
+      email: willyyayaya@gmail.com
